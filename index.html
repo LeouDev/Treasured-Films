@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Treasured Films wedding packages</title>
+<meta name="description" content="Sample packages page for Treasured Films, a wedding film team in Cebu.">
+<!-- A sample to show on a call, so search engines should stay out. Remove when this becomes the real site. -->
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* Colours and faces come from Treasured Films' own rate cards. */
+:root{
+  --ground:#f5f0ea;--paper:#fbf7f6;--field:#e9e0d5;--ink:#2a211a;--taupe:#786048;--deep:#3b2e23;--cream:#f5f0ea;
+  --serif:"Libre Caslon Display",Georgia,serif;--sans:Montserrat,system-ui,sans-serif;
+  --edge:clamp(20px,2.4vw,36px);
+  --s-display:clamp(64px,min(11vw,18svh),190px);--s-big:clamp(44px,5.4vw,84px);--s-title:clamp(34px,3.3vw,50px);--s-lead:clamp(21px,2vw,30px);--s-body:clamp(18px,1.3vw,19px);--s-small:clamp(14px,1.05vw,15px);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ground);color:var(--ink);font:400 var(--s-body)/1.55 var(--sans);overflow-x:clip}
+img{display:block;width:100%;height:100%;object-fit:cover}
+ul{list-style:none;padding:0}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.015em;line-height:1.02;text-wrap:balance}
+:focus-visible{outline:3px solid var(--taupe);outline-offset:3px}
+
+/* Their rounded picture frame, the one shape carried over from the rate cards. */
+.frame{aspect-ratio:.7;overflow:hidden;border-radius:20%/14%;background:var(--field)}
+.frame img{transform:scale(1.045)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 28px;border:0;border-radius:999px;background:var(--taupe);color:var(--cream);font:600 var(--s-small)/1.2 var(--sans);text-decoration:none;cursor:pointer;transition:background-color .2s,transform .2s}
+.btn:hover{background:var(--deep);transform:translateY(-2px)}
+.btn:active{transform:scale(.97)}
+.price{display:inline-block;padding:8px 22px;border-radius:999px;background:var(--paper);color:var(--taupe);font:600 var(--s-lead)/1.2 var(--sans)}
+
+.sample{padding:7px var(--edge);background:var(--deep);color:var(--cream);font-size:var(--s-small);line-height:1.3;text-align:center}
+.bar{display:flex;align-items:center;gap:clamp(16px,3vw,40px);padding:10px var(--edge)}
+.brand{display:block;width:clamp(58px,5vw,72px);margin-right:auto}
+.brand img{height:auto}
+.bar nav{display:flex;gap:clamp(16px,2.4vw,34px)}
+.bar nav a{font-weight:500;font-size:var(--s-small);text-decoration:none}
+.bar nav a:hover{color:var(--taupe);text-decoration:underline;text-underline-offset:5px}
+
+/* Wedding experiences */
+h1{padding:0 var(--edge) .13em;font-size:var(--s-display);line-height:.96;letter-spacing:-.025em;color:var(--taupe);white-space:nowrap}
+.lede{padding:0 var(--edge)}
+.ladder{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:20px;padding:8px var(--edge);background:var(--ground)}
+.ladder a{display:block;padding:9px 4px;border-radius:999px;text-align:center;font-size:var(--s-small);line-height:1.25;font-weight:500;text-decoration:none;transition:background-color .25s,color .25s}
+.ladder b{display:block;font-weight:600}
+.ladder a:hover{background:var(--field)}
+.ladder a[aria-current=true]{background:var(--taupe);color:var(--cream)}
+.exps{padding:8px var(--edge) 0}
+.exp{display:grid;gap:18px;padding-block:22px;scroll-margin-top:72px}
+.exp h2{font-size:var(--s-title)}
+.exp .price{margin:16px 0}
+.exp__list li{padding-block:4px}
+.exp__list .btn{margin-top:18px}
+.tag{margin-left:10px;font-weight:600;font-size:var(--s-small);color:var(--taupe)}
+
+@media (max-width:639.98px){
+  .exp__pic{order:-1}
+}
+@media (min-width:640px){
+  .exp{grid-template-columns:minmax(0,300px) minmax(0,1fr);column-gap:40px;align-items:center;padding-block:clamp(36px,5vw,64px)}
+  .exp__pic{grid-row:1/span 2}
+  .exp__lead{align-self:end}
+  .exp__list{align-self:start}
+}
+/* The stage holds still while the scroll moves through the four experiences. Without script, or with reduced motion, they simply stack. */
+@media (min-width:1000px) and (prefers-reduced-motion:no-preference){
+  .js .story{height:280svh}
+  .js .stage{position:sticky;top:0;height:100svh;display:flex;flex-direction:column}
+  .js .exps{position:relative;flex:1;min-height:0;order:2;padding:0;margin:12px var(--edge) 0}
+  .js .ladder{order:3;margin-top:6px;padding-bottom:12px}
+  .js .exp{position:absolute;inset:0;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);column-gap:clamp(28px,4vw,72px);align-items:center;padding:0;opacity:0;visibility:hidden;transition:opacity .5s,visibility 0s .5s}
+  .js .exp.is-on{opacity:1;visibility:visible;transition:opacity .5s}
+  .js .exp__lead{grid-row:1;grid-column:1;align-self:center;max-width:440px}
+  .js .exp__pic{grid-row:1;grid-column:2;height:100%;width:auto}
+  .js .exp__list{grid-row:1;grid-column:3;align-self:center;max-width:460px}
+}
+
+/* The chooser and its ticket */
+.fit{padding:clamp(72px,10vw,150px) var(--edge);background:var(--field)}
+.no-script{display:none}
+.fit__head{display:grid;gap:18px;max-width:1040px;margin-inline:auto}
+.fit h2{font-size:var(--s-big);color:var(--taupe)}
+.fit__head p{max-width:62ch}
+.ticks{display:flex;flex-wrap:wrap;gap:10px;max-width:1040px;margin:30px auto 0}
+.tick{position:relative;display:inline-flex;align-items:center;min-height:48px;padding:10px 22px;border-radius:999px;background:var(--paper);font-weight:500;font-size:var(--s-small);cursor:pointer;transition:background-color .2s,color .2s,transform .2s}
+.tick:hover{transform:translateY(-2px)}
+.tick input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.tick:has(input:checked){background:var(--taupe);color:var(--cream)}
+.tick:has(input:focus-visible){outline:3px solid var(--taupe);outline-offset:3px}
+.fit__result{max-width:1040px;margin:40px auto 0}
+.ticket{position:relative;display:grid;grid-template-columns:7fr 3fr;max-width:1040px;margin:18px auto 0;border-radius:18px;background:var(--paper)}
+.ticket::before,.ticket::after{content:"";position:absolute;left:70%;width:28px;height:28px;margin-left:-14px;border-radius:50%;background:var(--field)}
+.ticket::before{top:-14px}
+.ticket::after{bottom:-14px}
+.ticket__main{display:grid;grid-template-columns:clamp(84px,11vw,150px) minmax(0,1fr);column-gap:clamp(18px,2.4vw,32px);padding:clamp(22px,2.6vw,36px)}
+.ticket__main .frame{grid-row:1/span 2}
+.ticket__main h3{font-size:var(--s-title);color:var(--taupe)}
+.ticket__main ul{margin-top:12px;font-size:var(--s-small)}
+.ticket__main li{padding-block:3px;break-inside:avoid}
+.ticket__stub{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:clamp(26px,3vw,42px);border-left:6px dotted var(--field)}
+.ticket__stub p{color:var(--taupe);font:600 var(--s-lead)/1.1 var(--sans);text-align:center}
+.ticket__stub .btn{width:100%}
+
+/* Pre-wedding: three pictures rise while the heading holds */
+.pre{--p:1;overflow:clip}
+.pre__stage{display:flex;flex-direction:column;padding:clamp(48px,6svh,80px) var(--edge) 0;overflow:clip}
+.pre__copy{display:grid;justify-items:center;gap:12px;text-align:center}
+.pre h2{font-size:var(--s-big);color:var(--taupe)}
+.pre__copy p{max-width:66ch}
+.trip{display:flex;justify-content:center;align-items:flex-start;gap:clamp(8px,1.2vw,18px);margin-top:clamp(20px,3.4svh,36px)}
+.trip .frame{flex:none;width:clamp(116px,25vw,360px);margin-top:44px;transform:translateY(calc((1 - var(--p))*50%))}
+.trip .frame.mid{width:clamp(210px,36vw,520px);margin-top:0;transform:translateY(calc((1 - var(--p))*34%)) scale(calc(.88 + .12*var(--p)));transform-origin:50% 0}
+@media (min-width:640px){
+  .js .pre{height:190svh}
+  .js .pre__stage{position:sticky;top:0;height:100svh}
+}
+@media (prefers-reduced-motion:reduce){
+  .js .pre{height:auto}
+  .js .pre__stage{position:static;height:auto}
+  html{scroll-behavior:auto}
+}
+
+/* Pre-wedding line-up, one size throughout */
+.lineup{padding:clamp(56px,7vw,110px) var(--edge) clamp(72px,10vw,150px)}
+.lineup table{width:100%;border-collapse:collapse;font-size:var(--s-lead);line-height:1.2}
+.lineup th,.lineup td{padding:.42em 1em .42em 0;font-weight:400;text-align:left;vertical-align:top}
+.lineup thead th{color:var(--taupe);font:600 var(--s-body) var(--sans)}
+.lineup td:last-child,.lineup thead th:last-child{padding-right:0;text-align:right;font-family:var(--sans);font-weight:600;color:var(--taupe);white-space:nowrap}
+.lineup tbody th{font-family:var(--serif);font-size:1.2em;line-height:1;width:26%}
+.lineup tbody a{text-decoration:none}
+.lineup tbody a:hover{color:var(--taupe);text-decoration:underline;text-underline-offset:5px}
+.lineup__note{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:clamp(28px,4vw,56px)}
+
+/* Questions, one band each */
+.faq__head{display:flex;align-items:flex-end;min-height:38svh;padding:var(--edge);background:var(--taupe);color:var(--cream)}
+.faq__head h2{font-size:var(--s-big);line-height:.96}
+.q{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:20px;padding:clamp(32px,4vw,56px) var(--edge)}
+.q:nth-child(odd){background:var(--paper)}
+.q h3{grid-column:1/span 5;font-size:var(--s-lead);line-height:1.1}
+.q p{grid-column:7/-1;text-wrap:pretty}
+.q p.todo{color:var(--taupe);font-weight:500}
+
+/* Check your date */
+.date{padding:clamp(72px,9vw,130px) var(--edge) var(--edge);background:var(--deep);color:var(--cream)}
+.date__top{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,6vw,96px);align-items:start}
+.date h2{font-size:var(--s-big);line-height:.96}
+.date__copy p{margin-top:24px;max-width:36ch;text-wrap:pretty}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:clamp(24px,3vw,42px);border-radius:18px;background:var(--paper);color:var(--ink)}
+label{display:grid;gap:6px;font-weight:500;font-size:var(--s-small)}
+.wide{grid-column:1/-1}
+input,select{width:100%;min-height:50px;padding:10px 14px;border:1.5px solid #cdbfae;border-radius:10px;background:#fff;color:var(--ink);font:400 var(--s-body) var(--sans)}
+form .btn{justify-self:start}
+.status{grid-column:1/-1;font-weight:500;color:var(--taupe)}
+.phone{display:block;margin-top:clamp(56px,8vw,120px);font:400 var(--s-display)/1 var(--serif);letter-spacing:-.025em;text-decoration:none;white-space:nowrap;transition:opacity .2s}
+.phone:hover{opacity:.75}
+.date__foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;margin-top:22px;font-size:var(--s-small)}
+
+footer{display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:baseline;padding:clamp(48px,10svh,90px) var(--edge) 26px;font-size:var(--s-small)}
+footer nav{display:flex;gap:24px}
+footer p:last-child{text-align:right}
+
+@media (max-width:639.98px){
+  h1{white-space:normal;font-size:18.4vw}
+  .bar nav{display:none}
+  .ladder{margin-top:16px;padding-inline:8px;gap:2px}
+  .ladder a{padding:8px 2px;border-radius:14px}
+  .ticket{grid-template-columns:1fr}
+  .ticket::before,.ticket::after{display:none}
+  .ticket__stub{position:relative;border-left:0;border-top:6px dotted var(--field)}
+  /* The notches sit on the dotted line, whatever height the stub is. */
+  .ticket__stub::before,.ticket__stub::after{content:"";position:absolute;top:-17px;width:28px;height:28px;border-radius:50%;background:var(--field)}
+  .ticket__stub::before{left:-14px}
+  .ticket__stub::after{right:-14px}
+  .ticket__stub p{font-size:var(--s-title)}
+  .ticket__main{grid-template-columns:72px minmax(0,1fr)}
+  .ticket__main .frame{grid-row:1}
+  .ticket__main ul{grid-column:1/-1;margin-top:16px;font-size:var(--s-body)}
+  .trip{margin-inline:calc(var(--edge)*-1)}
+  .trip .frame{width:17vw;margin-top:44px}
+  .trip .frame.mid{width:62vw}
+  .lineup table,.lineup tbody,.lineup tr{display:block}
+  .lineup thead{display:none}
+  .lineup tr{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding-block:13px}
+  .lineup th,.lineup td{display:block;padding:0}
+  .lineup tbody th{width:auto}
+  .lineup td:last-child{grid-column:2;grid-row:1;align-self:center}
+  .lineup td{grid-column:1/-1;font-size:var(--s-body)}
+  .lineup td:empty,.lineup td.none{display:none}
+  .q{display:block}
+  .q p{margin-top:10px}
+  .date__top{grid-template-columns:1fr}
+  form{grid-template-columns:1fr}
+  .phone{font-size:13.2vw;font-weight:400}
+  footer{grid-template-columns:1fr;gap:8px}
+  footer p:last-child{text-align:left}
+}
+
+/* Parts of each section arrive in turn, once. They only start hidden when the script is running and motion is welcome. */
+@media (prefers-reduced-motion:no-preference){
+  .js .rise{opacity:0;transform:translateY(24px)}
+  .js .rise.in{opacity:1;transform:none;transition:opacity .7s ease-out,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0)*75ms)}
+  .exp.is-on .frame img{animation:drift 12s ease-out both}
+  @keyframes drift{from{transform:scale(1.11)}to{transform:scale(1.045)}}
+  .ticket.pop{animation:pop .4s ease-out}
+  @keyframes pop{40%{transform:translateY(-6px)}}
+}
+@media (prefers-reduced-motion:reduce){
+  .btn,.tick{transition:none}
+}
+</style>
+</head>
+<body id="top">
+<main>
+
+<section class="story" id="wedding">
+  <div class="stage">
+    <header>
+      <p class="sample">Sample by Built by Leou. Not a live site.</p>
+      <div class="bar">
+      <a class="brand" href="#top"><img src="img/logo.png" alt="Treasured Films" width="464" height="404"></a>
+      <nav aria-label="On this page">
+        <a href="#wedding">Wedding</a>
+        <a href="#prewedding">Pre-wedding</a>
+        <a href="#questions">Questions</a>
+      </nav>
+      <a class="btn" href="#date">Check your date</a>
+      </div>
+    </header>
+    <h1>Wedding Experiences</h1>
+    <p class="lede">Four ways to keep your wedding on film with Treasured Films in Cebu, from ₱50,000, each with a same-day edit.</p>
+
+    <nav class="ladder" aria-label="Wedding experiences">
+      <a href="#signature" aria-current="true">Signature<b>₱50,000</b></a>
+      <a href="#enhanced">Enhanced<b>₱70,000</b></a>
+      <a href="#elite">Elite<b>₱90,000</b></a>
+      <a href="#complete">Complete<b>₱100,000</b></a>
+    </nav>
+
+    <div class="exps">
+      <article class="exp is-on" id="signature">
+        <div class="exp__lead">
+          <h2>Signature Experience</h2>
+          <p class="price">₱50,000</p>
+          <p>Your same-day edit film, shot with multiple cameras and from the air, then yours to keep on a customized USB drive.</p>
+        </div>
+        <figure class="exp__pic frame"><img src="img/signature.jpg" width="516" height="736" alt="Bride stepping out of a vintage white car"></figure>
+        <div class="exp__list">
+          <ul>
+            <li>Same-Day Edit Film Presentation</li>
+            <li>Multi-Camera Coverage</li>
+            <li>Aerial Coverage</li>
+            <li>Customized USB Drive</li>
+          </ul>
+          <a class="btn" href="#date" data-pick="Signature Experience">Ask about Signature</a>
+        </div>
+      </article>
+
+      <article class="exp" id="enhanced">
+        <div class="exp__lead">
+          <h2>Enhanced Experience</h2>
+          <p class="price">₱70,000</p>
+          <p>Everything in Signature, plus the full-length wedding film, 15 minutes of the after-party and a video book.</p>
+        </div>
+        <figure class="exp__pic frame"><img src="img/enhanced.jpg" width="514" height="736" alt="Bride seen from behind in a long gown, between peach curtains"></figure>
+        <div class="exp__list">
+          <ul>
+            <li>Same-Day Edit Film Presentation</li>
+            <li>Multi-Camera Coverage</li>
+            <li>Aerial Coverage</li>
+            <li>Full-Length Wedding Film</li>
+            <li>After-Party Coverage (15 Minutes)</li>
+            <li>Customized USB Drive + Video Book</li>
+          </ul>
+          <a class="btn" href="#date" data-pick="Enhanced Experience">Ask about Enhanced</a>
+        </div>
+      </article>
+
+      <article class="exp" id="elite">
+        <div class="exp__lead">
+          <h2>Elite Experience</h2>
+          <p class="price">₱90,000</p>
+          <p>Everything in Enhanced, with 30 to 60 minutes of the after-party, priority film delivery and your raw footage on a 1TB hard drive.</p>
+        </div>
+        <figure class="exp__pic frame"><img src="img/elite.jpg" width="550" height="784" alt="Bride and groom raising their hands in celebration"></figure>
+        <div class="exp__list">
+          <ul>
+            <li>Same-Day Edit Film Presentation</li>
+            <li>Multi-Camera Coverage</li>
+            <li>Aerial Coverage</li>
+            <li>Full-Length Wedding Film</li>
+            <li>Extended After-Party Coverage (30–60 Minutes)</li>
+            <li>Priority Film Delivery</li>
+            <li>Customized USB Drive + Video Book</li>
+            <li>1TB Hard Drive Copy of Raw Footage</li>
+          </ul>
+          <a class="btn" href="#date" data-pick="Elite Experience">Ask about Elite</a>
+        </div>
+      </article>
+
+      <article class="exp" id="complete">
+        <div class="exp__lead">
+          <h2>Complete Experience</h2>
+          <p class="price">₱100,000</p><span class="tag">Best value</span>
+          <p>Your wedding and pre-wedding together, for at least ₱20,000 less than booking Elite and a pre-wedding package separately.</p>
+        </div>
+        <figure class="exp__pic frame"><img src="img/complete.jpg" width="594" height="850" alt="Couple walking hand in hand through a round flower arch"></figure>
+        <div class="exp__list">
+          <ul>
+            <li>Everything Included in the Elite Experience</li>
+            <li>Pre-Wedding Experience</li>
+            <li>Save-the-Date Film + Prenup Highlights Film</li>
+            <li>Extended After-Party Coverage (30–60 Minutes)</li>
+            <li>Customized USB Drive + Video Book</li>
+            <li>Priority Film Delivery</li>
+            <li>1TB Hard Drive Copy of Raw Footage</li>
+          </ul>
+          <a class="btn" href="#date" data-pick="Complete Experience">Ask about Complete</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="fit" id="fit" hidden>
+  <div class="fit__head">
+    <h2 class="rise">Tick what you want to keep</h2>
+    <p class="rise">Every experience already has the same-day edit, multi-camera and aerial coverage, and a USB drive.</p>
+  </div>
+  <div class="ticks rise" role="group" aria-label="What you want to keep">
+    <label class="tick"><input type="checkbox" data-rank="1">Full-length wedding film</label>
+    <label class="tick"><input type="checkbox" data-rank="1">Video book</label>
+    <label class="tick"><input type="checkbox" data-rank="1">15 minutes of the after-party</label>
+    <label class="tick"><input type="checkbox" data-rank="2">30 to 60 minutes of the after-party</label>
+    <label class="tick"><input type="checkbox" data-rank="2">Priority film delivery</label>
+    <label class="tick"><input type="checkbox" data-rank="2">Raw footage on a 1TB hard drive</label>
+    <label class="tick"><input type="checkbox" data-rank="3">Pre-wedding films</label>
+  </div>
+  <p class="fit__result rise">The smallest experience with everything you ticked:</p>
+  <div class="ticket rise" id="ticket" aria-live="polite">
+    <div class="ticket__main">
+      <figure class="frame"><img id="t-pic" src="img/signature.jpg" width="516" height="736" alt=""></figure>
+      <h3 id="t-name"></h3>
+      <ul id="t-list"></ul>
+    </div>
+    <div class="ticket__stub">
+      <p id="t-price"></p>
+      <a class="btn" id="t-ask" href="#date">Ask about this</a>
+    </div>
+  </div>
+</section>
+
+<section class="pre" id="prewedding">
+  <div class="pre__stage">
+    <div class="pre__copy">
+      <h2>Pre-wedding packages</h2>
+      <p>Shoot close to home, at a destination or abroad, from ₱30,000. Each comes with unlimited video shots from start to finish, a save-the-date video and a prenup highlight.</p>
+    </div>
+    <div class="trip">
+      <figure class="frame"><img src="img/local.jpg" width="642" height="919" loading="lazy" alt="Couple facing each other at an arched black door"></figure>
+      <figure class="frame mid"><img src="img/destination.jpg" width="642" height="919" loading="lazy" alt="Couple walking on a Boracay beach between palm trees"></figure>
+      <figure class="frame"><img src="img/international.jpg" width="642" height="919" loading="lazy" alt="Couple walking hand in hand down an avenue of golden trees"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="lineup" aria-label="Pre-wedding prices">
+  <table>
+    <thead><tr><th scope="col">Package</th><th scope="col">Team</th><th scope="col">Shoot</th><th scope="col">Price</th></tr></thead>
+    <tbody>
+      <tr class="rise"><th scope="row"><a href="#date" data-pick="Local pre-wedding">Local</a></th><td>3 videographers</td><td class="none">&nbsp;</td><td>₱30,000</td></tr>
+      <tr class="rise"><th scope="row"><a href="#date" data-pick="Destination pre-wedding">Destination</a></th><td>1-2 videographers</td><td>1-2 days, 3-5 locations</td><td>₱40,000</td></tr>
+      <tr class="rise"><th scope="row"><a href="#date" data-pick="International pre-wedding">International</a></th><td>1-2 videographers</td><td>1-2 days, 3-5 locations</td><td>₱50,000</td></tr>
+    </tbody>
+  </table>
+  <div class="lineup__note rise">
+    <p>Planning both? The Complete Experience is your wedding and pre-wedding together for ₱100,000.</p>
+    <a class="btn" href="#date" data-pick="Complete Experience">Ask about Complete</a>
+  </div>
+</section>
+
+<section id="questions">
+  <div class="faq__head"><h2 class="rise">Good to know</h2></div>
+  <div>
+    <div class="q"><h3 class="rise">What comes with every wedding experience?</h3><p class="rise">A same-day edit film presentation, multi-camera coverage, aerial coverage and a customized USB drive.</p></div>
+    <div class="q"><h3 class="rise">Which ones include the full-length film?</h3><p class="rise">Enhanced, Elite and Complete.</p></div>
+    <div class="q"><h3 class="rise">Is the pre-wedding shoot included?</h3><p class="rise">It's part of the Complete Experience, with a save-the-date film and a prenup highlights film. You can also book a pre-wedding package on its own, from ₱30,000.</p></div>
+    <div class="q"><h3 class="rise">Do we get the raw footage?</h3><p class="rise">Elite and Complete come with a copy on a 1TB hard drive.</p></div>
+    <div class="q"><h3 class="rise">Are travel and hotel included for destination shoots?</h3><p class="rise todo">Answer to come from Treasured Films.</p></div>
+    <div class="q"><h3 class="rise">How soon do we get our film?</h3><p class="rise todo">Elite and Complete have priority delivery. Delivery times to come from Treasured Films.</p></div>
+  </div>
+</section>
+
+<section class="date" id="date">
+  <div class="date__top">
+    <div class="date__copy">
+      <h2 class="rise">Check your date</h2>
+      <p class="rise">Send your date and venue, and we'll tell you if we're free. Our Facebook page has 19K followers and 19 reviews, and all 19 recommend us.</p>
+    </div>
+    <form id="form" class="rise">
+      <label class="wide">Your names<input name="names" required autocomplete="name"></label>
+      <label>Date of your wedding or shoot<input name="date" type="date" required></label>
+      <label>Venue or city<input name="venue"></label>
+      <label class="wide">Package
+        <select name="package" id="package">
+          <option>Not sure yet</option>
+          <option>Signature Experience</option>
+          <option>Enhanced Experience</option>
+          <option>Elite Experience</option>
+          <option>Complete Experience</option>
+          <option>Local pre-wedding</option>
+          <option>Destination pre-wedding</option>
+          <option>International pre-wedding</option>
+        </select>
+      </label>
+      <label class="wide">Mobile number or email<input name="contact" required></label>
+      <button class="btn" type="submit">Send my date</button>
+      <p class="status" id="status" role="status"></p>
+    </form>
+  </div>
+  <a class="phone rise" href="tel:+639562288085">+63 956 228 8085</a>
+  <div class="date__foot">
+    <p>Cebu, Philippines</p>
+    <p><a href="https://www.facebook.com/treasuredfilmsph/">Facebook</a> &nbsp; <a href="https://www.instagram.com/treasuredfilmsph/">Instagram</a></p>
+  </div>
+</section>
+
+</main>
+<footer>
+  <p>Wedding films in Cebu</p>
+  <nav aria-label="Footer">
+    <a href="#wedding">Wedding</a>
+    <a href="#prewedding">Pre-wedding</a>
+    <a href="#date">Your date</a>
+  </nav>
+  <p>Sample by Built by Leou</p>
+</footer>
+
+<script>
+(() => {
+  const $ = (s) => [...document.querySelectorAll(s)];
+  const one = (s) => document.querySelector(s);
+  const exps = $('.exp'), marks = $('.ladder a'), story = one('.story'), pre = one('.pre');
+  const wide = matchMedia('(min-width:1000px) and (prefers-reduced-motion:no-preference)'), calm = matchMedia('(prefers-reduced-motion: reduce)');
+  const clamp = (n) => Math.min(1, Math.max(0, n));
+
+  // The experience on show follows the scroll, on the held stage and on the stacked phone layout alike.
+  let current = 0;
+  function show(i) {
+    if (i === current) return;
+    current = i;
+    exps.forEach((e, k) => e.classList.toggle('is-on', k === i));
+    marks.forEach((m, k) => m.setAttribute('aria-current', k === i ? 'true' : 'false'));
+  }
+  function onScroll() {
+    const vh = innerHeight;
+    if (wide.matches) {
+      const r = story.getBoundingClientRect();
+      show(Math.min(3, Math.floor(clamp(-r.top / (r.height - vh)) * 4)));
+    } else {
+      let i = 0;
+      exps.forEach((e, k) => { if (e.getBoundingClientRect().top < vh * 0.5) i = k; });
+      show(i);
+    }
+    if (!calm.matches && innerWidth >= 640) {
+      const r = pre.getBoundingClientRect();
+      pre.style.setProperty('--p', clamp((vh * 0.5 - r.top) / (r.height - vh + vh * 0.5)).toFixed(3));
+    }
+  }
+  let queued = false;
+  const queue = () => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; onScroll(); }); } };
+  addEventListener('scroll', queue, { passive: true });
+  addEventListener('resize', queue);
+
+  marks.forEach((m, i) => m.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (wide.matches) scrollTo({ top: story.offsetTop + ((i + 0.5) / 4) * (story.offsetHeight - innerHeight) });
+    else exps[i].scrollIntoView();
+  }));
+
+  // The live thing: tick what you want, and the ticket shows the smallest experience that has all of it.
+  const fit = one('#fit'), ticket = one('#ticket'), ticks = $('.tick input');
+  fit.hidden = false;
+  function pour(animate) {
+    const rank = Math.max(0, ...ticks.filter((t) => t.checked).map((t) => +t.dataset.rank));
+    const e = exps[rank], name = e.querySelector('h2').textContent;
+    one('#t-name').textContent = name;
+    one('#t-list').innerHTML = e.querySelector('ul').innerHTML;
+    one('#t-price').textContent = e.querySelector('.price').textContent;
+    one('#t-pic').src = e.querySelector('img').getAttribute('src');
+    const ask = one('#t-ask');
+    ask.textContent = 'Ask about ' + name.split(' ')[0];
+    ask.dataset.pick = name;
+    if (animate) { ticket.classList.remove('pop'); void ticket.offsetWidth; ticket.classList.add('pop'); }
+  }
+  ticks.forEach((t) => t.addEventListener('change', () => pour(true)));
+  pour(false);
+
+  // Asking about a package fills it in on the form.
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('[data-pick]');
+    if (a) one('#package').value = a.dataset.pick;
+  });
+
+  // shortcut: nothing is sent, this is a sample. Wire it to their inbox when it becomes the real site.
+  one('#form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    one('#status').textContent = 'This is a sample, so nothing was sent. On the real site, your details go straight to Treasured Films.';
+  });
+
+  // Entrances, each part of a group a little after the last.
+  const parts = $('.rise');
+  const seen = new IntersectionObserver((entries) => {
+    entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); seen.unobserve(en.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  parts.forEach((el) => {
+    const sibs = [...el.parentElement.children].filter((c) => c.classList.contains('rise'));
+    el.style.setProperty('--i', sibs.indexOf(el));
+    seen.observe(el);
+  });
+
+  onScroll();
+})();
+</script>
+</body>
+</html>
